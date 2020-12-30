@@ -1,6 +1,9 @@
 import { ApolloServer, MockList } from "apollo-server-micro";
 import { schema } from "../../apollo/schema";
 import casual from "casual";
+
+casual.define("todo", (task) => ({ id: casual.uuid, task }));
+
 const mocks = {
   Dog: async () => {
     let { message: displayImage } = await (
@@ -13,12 +16,22 @@ const mocks = {
     };
   },
 
+  Todo: () => ({
+    id: casual.uuid,
+    task: casual.sentence,
+  }),
+
   User: () => {
     return { id: casual.uuid, firstName: casual.first_name };
   },
   Query: () => ({
     dogs: () => new MockList([3, 5]),
     users: () => new MockList([3, 5]),
+    todos: () => new MockList([3, 5]),
+  }),
+
+  Mutation: () => ({
+    addTodo: (_, { task }) => casual.todo(task),
   }),
 };
 

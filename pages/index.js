@@ -2,6 +2,8 @@ import Head from "next/head";
 import Users from "../components/Users";
 import Dogs from "../components/Dogs";
 import { withApollo } from "../apollo/client";
+import AddTodo from "../components/AddTodo";
+import AddTodos from "../components/AddTodos";
 
 const Index = () => {
   return (
@@ -12,8 +14,10 @@ const Index = () => {
       </Head>
 
       <main>
-        <Users />
-        <Dogs />
+        {/* <Users />
+        <Dogs /> */}
+        {/* <AddTodo /> */}
+        <AddTodos />
       </main>
 
       <footer>
