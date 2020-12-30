@@ -14,6 +14,18 @@ export const typeDefs = gql`
     task: String!
   }
 
+  type Author {
+    id: ID!
+    name: String!
+  }
+
+  type Comment {
+    id: ID!
+    postedBy: Author!
+    createdAt: String!
+    content: String!
+  }
+
   type Dog {
     id: ID!
     breed: String!
@@ -25,6 +37,7 @@ export const typeDefs = gql`
     dogs: [Dog!]!
     dog(breed: String): Dog!
     todos: [Todo!]!
+    comments: [Comment!]!
   }
 
   type Mutation {

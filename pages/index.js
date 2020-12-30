@@ -4,6 +4,7 @@ import Dogs from "../components/Dogs";
 import { withApollo } from "../apollo/client";
 import AddTodo from "../components/AddTodo";
 import AddTodos from "../components/AddTodos";
+import CommentsPage from "../components/CommentsPage";
 
 const Index = () => {
   return (
@@ -17,7 +18,8 @@ const Index = () => {
         {/* <Users />
         <Dogs /> */}
         {/* <AddTodo /> */}
-        <AddTodos />
+        {/* <AddTodos /> */}
+        <CommentsPage />
       </main>
 
       <footer>

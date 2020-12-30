@@ -16,6 +16,17 @@ const mocks = {
     };
   },
 
+  Author: () => ({
+    id: casual.uuid,
+    name: casual.name,
+  }),
+
+  Comment: () => ({
+    id: casual.uuid,
+    createdAt: casual.date("YYYY-MM-DD"),
+    content: casual.description,
+  }),
+
   Todo: () => ({
     id: casual.uuid,
     task: casual.sentence,
@@ -28,6 +39,7 @@ const mocks = {
     dogs: () => new MockList([3, 5]),
     users: () => new MockList([3, 5]),
     todos: () => new MockList([3, 5]),
+    comments: () => new MockList([5, 7]),
   }),
 
   Mutation: () => ({
